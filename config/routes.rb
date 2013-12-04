@@ -1,4 +1,7 @@
 RubyRailsUpdateChecker::Application.routes.draw do
+  get "rss_entries/index"
+  get "rss_entries/show"
+  get "rss_entries/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
