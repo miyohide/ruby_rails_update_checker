@@ -1,0 +1,4 @@
+CheckRss:
+   every:
+      - "1h"
+
