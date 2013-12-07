@@ -25,4 +25,7 @@ gem 'paranoia', '~> 2.0'
 
 gem 'resque-scheduler'
 
+group :development, :test do
+   gem 'rspec-rails', '~> 3.0.0.beta'
+end
 
