@@ -166,6 +166,7 @@ DEPENDENCIES
   jquery-rails
   paranoia (~> 2.0)
   rails (= 4.0.2)
+  resque
   resque-scheduler
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)

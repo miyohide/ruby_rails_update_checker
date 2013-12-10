@@ -1,4 +1,4 @@
 CheckRss:
    every:
-      - "1h"
+      - "1m"
 
