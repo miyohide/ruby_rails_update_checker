@@ -9,10 +9,10 @@
       </tr>
    </thead>
    <tbody>
-      <% @rails_entries.items.each do |item| %>
+      <% @rails_entries.each do |item| %>
          <tr>
-            <td><%= item.title.content %></td>
-            <td><%= item.updated.content %></td>
+            <td><%= item.title %></td>
+            <td><%= item.entry_updated_at %></td>
             <td><button type="button" class="btn btn-primary">Detail</button></td>
             <td><button type="button" class="btn btn-danger">Read</button></td>
          </tr>
