@@ -41,3 +41,6 @@ rerun.txt
 pickle-email-*.html
 .project
 !.keep
+
+# resque-scheduler dump file?
+dump.rdb
