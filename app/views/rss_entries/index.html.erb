@@ -14,7 +14,7 @@
             <td><%= item.title %></td>
             <td><%= item.entry_updated_at %></td>
             <td><button type="button" class="btn btn-primary">Detail</button></td>
-            <td><button type="button" class="btn btn-danger">Read</button></td>
+            <td><%= link_to 'Read', rss_entry_path(item), method: :delete, class: 'btn btn-danger' %></td>
          </tr>
       <% end %>
    </tbody>

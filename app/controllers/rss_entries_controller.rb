@@ -7,5 +7,7 @@ class RssEntriesController < ApplicationController
   end
 
   def destroy
+     RssEntry.find(params[:id]).destroy
+     redirect_to rss_entries_url
   end
 end
