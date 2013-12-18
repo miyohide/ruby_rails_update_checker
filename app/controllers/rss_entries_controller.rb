@@ -4,6 +4,7 @@ class RssEntriesController < ApplicationController
   end
 
   def show
+     @rss_entry = RssEntry.find(params[:id])
   end
 
   def destroy
