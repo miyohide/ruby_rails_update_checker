@@ -41,6 +41,7 @@ rerun.txt
 pickle-email-*.html
 .project
 !.keep
+.ruby-version
 
 # resque-scheduler dump file?
 dump.rdb
