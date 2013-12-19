@@ -1,6 +1,6 @@
 class RssEntriesController < ApplicationController
   def index
-     @rails_entries = RssEntry.order("entry_updated_at DESC").all
+     @rss_entries = RssEntry.order("entry_updated_at DESC").load
   end
 
   def show
