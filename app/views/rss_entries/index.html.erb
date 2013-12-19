@@ -3,15 +3,17 @@
    <thead>
       <tr>
          <th>Title</th>
+         <th>Type</th>
          <th>Post DateTime</th>
          <th></th>
          <th></th>
       </tr>
    </thead>
    <tbody>
-      <% @rails_entries.each do |item| %>
+      <% @rss_entries.each do |item| %>
          <tr>
             <td><%= item.title %></td>
+            <td><%= item.name %></td>
             <td><%= item.entry_updated_at %></td>
             <td><%= link_to 'Detail', rss_entry_path(item), class: 'btn btn-primary' %></td>
             <td><%= link_to 'Read', rss_entry_path(item), method: :delete, class: 'btn btn-danger' %></td>
