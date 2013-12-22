@@ -1,10 +1,9 @@
-
 <div class="container">
    <div class="col-md-8">
       <h1><%= @rss_entry.title %></h1>
       <p><%= raw(@rss_entry.content) %></p>
       <p>
-         <button type="button" class="btn btn-primary">Package</button>
+         <%= link_to 'Package', package_rss_entry_path(@rss_entry), class: 'btn btn-primary' %>
          <%= link_to 'Read', rss_entry_path(@rss_entry), method: :delete, class: 'btn btn-danger' %>
       </p>
    </div>
