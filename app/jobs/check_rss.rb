@@ -13,10 +13,10 @@ module CheckRss
       rss = Feedzirra::Feed.fetch_and_parse(url)
       max_rss_updated_at = RssEntry.with_deleted.where(name: name).maximum(:entry_updated_at)
       rss.entries.each do |entry|
-         if max_rss_updated_at.nil? || entry.updated.to_datetime > max_rss_updated_at
+         if max_rss_updated_at.nil? || entry.published.to_datetime > max_rss_updated_at
             RssEntry.create(
                title: entry.title,
-               content: entry.content.try(:sanitize),
+               content: (entry.summary || entry.content || '').gsub(/<.+?>/m, ''),
                entry_updated_at: entry.published.to_datetime,
                name: name
             )
