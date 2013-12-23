@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215060620) do
+ActiveRecord::Schema.define(version: 20131223135651) do
 
   create_table "rss_entries", force: true do |t|
     t.string   "title"
     t.string   "url"
-    t.text     "contents"
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
