@@ -4,4 +4,6 @@ RubyRailsUpdateChecker::Application.routes.draw do
          get 'package'
       end
    end
+
+   resources :settings
 end

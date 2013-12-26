@@ -1,0 +1,26 @@
+<table class="table">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>URL</th>
+         <th></th>
+         <th></th>
+      </tr>
+   </thead>
+   <tbody>
+   <% @rss_urls.keys.each do |key| %>
+      <tr>
+         <td><%= key %></td>
+         <td><%= @rss_urls[key] %></td>
+         <td><%= button_tag "edit", type: "button", class: "btn btn-primary" %></td>
+         <td><%= button_tag "delete", type: "button", class: "btn btn-danger" %></td>
+      </tr>
+   <% end %>
+   </tbody>
+</table>
+
+<%= button_tag "Save", type: "submit", class: "btn btn-primary" %>
+
+
+
+
