@@ -8,13 +8,15 @@
       </tr>
    </thead>
    <tbody>
-   <% @rss_urls.keys.each do |key| %>
-      <tr>
-         <td><%= key %></td>
-         <td><%= @rss_urls[key] %></td>
-         <td><%= button_tag "edit", type: "button", class: "btn btn-primary" %></td>
-         <td><%= button_tag "delete", type: "button", class: "btn btn-danger" %></td>
-      </tr>
+   <%= div_for(@rss_urls) do %>
+       <% @rss_urls.value.each do |key, val| %>
+           <tr>
+               <td><%= key %></td>
+               <td><%= val %></td>
+               <td><%= link_to "edit", edit_setting_path(@rss_urls, key: key), class: "btn btn-primary" %></td>
+               <td><%= link_to "delete", setting_path(@rss_urls, key: key), method: 'DELETE', class: "btn btn-danger" %></td>
+           </tr>
+       <% end %>
    <% end %>
    </tbody>
 </table>

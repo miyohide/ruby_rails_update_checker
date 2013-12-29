@@ -1,6 +1,7 @@
 class SettingsController < ApplicationController
    def index
-      @rss_urls = Settings.rss_urls
+      @rss_urls = Settings.unscoped.where(var: 'rss_urls').first
+      # @rss_urls = Settings.rss_urls
    end
 
    def new
