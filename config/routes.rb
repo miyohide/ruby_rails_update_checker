@@ -6,4 +6,6 @@ RubyRailsUpdateChecker::Application.routes.draw do
    end
 
    resources :settings
+
+   root to: 'rss_entries#index'
 end
