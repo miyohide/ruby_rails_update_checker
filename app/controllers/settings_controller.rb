@@ -12,4 +12,16 @@ class SettingsController < ApplicationController
       Settings.rss_urls = Settings.rss_urls.merge!(input_rss_url)
       redirect_to action: :index
    end
+
+   def edit
+      @rss_url = Settings.unscoped.find(params[:id])
+      @key = params[:key]
+      @val = @rss_url.value[@key]
+   end
+
+   def update
+      update_rss_url = Hash[*[params[:rss_name], params[:rss_url]]]
+      Settings.rss_urls = Settings.rss_urls.merge!(update_rss_url)
+      redirect_to action: :index
+   end
 end
