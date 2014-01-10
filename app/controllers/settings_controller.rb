@@ -24,4 +24,11 @@ class SettingsController < ApplicationController
       Settings.rss_urls = Settings.rss_urls.merge!(update_rss_url)
       redirect_to action: :index
    end
+
+   def destroy
+      rss_urls = Settings.rss_urls
+      rss_urls.delete(params[:key])
+      Settings.rss_urls = rss_urls
+      redirect_to action: :index
+   end
 end
