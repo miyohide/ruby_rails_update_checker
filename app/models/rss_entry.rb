@@ -3,7 +3,7 @@ class RssEntry < ActiveRecord::Base
 
    def package
       return <<"EOS"
-#{self.name}に関する情報をお知らせします。
+#{self.name.camelize}に関する情報をお知らせします。
 
 #{self.content}
 
