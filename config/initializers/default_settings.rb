@@ -3,4 +3,7 @@ Settings.defaults[:rss_urls] = {
    ruby:  "https://www.ruby-lang.org/ja/feeds/news.rss"
 }
 
+Settings.defaults[:send_addresses] = [
+   "foo.bar@example.com"
+]
 
