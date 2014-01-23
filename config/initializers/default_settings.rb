@@ -4,6 +4,6 @@ Settings.defaults[:rss_urls] = {
 }
 
 Settings.defaults[:send_addresses] = [
-   "foo.bar@example.com"
+   { to: "foo.bar@example.com", name: "foo.barさま" }
 ]
 
