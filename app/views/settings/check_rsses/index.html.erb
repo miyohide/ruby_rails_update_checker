@@ -1,0 +1,26 @@
+<h2>チェックするRSS</h2>
+<table class="table">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>URL</th>
+         <th></th>
+         <th></th>
+      </tr>
+   </thead>
+   <tbody>
+   <%= div_for(@rss_urls) do %>
+       <% @rss_urls.value.each do |key, val| %>
+           <tr>
+               <td><%= key %></td>
+               <td><%= val %></td>
+               <td><%= link_to "edit", edit_settings_check_rss_path(@rss_urls.id, key: key), class: "btn btn-primary" %></td>
+               <td><%= link_to "delete", settings_check_rss_path(@rss_urls, key: key), method: 'DELETE', class: "btn btn-danger" %></td>
+           </tr>
+       <% end %>
+   <% end %>
+   </tbody>
+</table>
+
+<%= link_to "Add", new_settings_check_rss_path, class: "btn btn-primary" %>
+
