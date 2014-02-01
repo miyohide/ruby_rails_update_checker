@@ -1,8 +1,0 @@
-<%= form_tag(setting_path(@rss_url), method: 'patch') do %>
-   <%= text_field_tag 'rss_name', @key, readonly: true %>
-   <%= text_field_tag 'rss_url', @val, placeholder: 'URL', size: 80 %><br />
-   <%= submit_tag 'Save', class: "btn btn-primary" %>
-   <%= link_to "Cancel", settings_path, class: "btn btn-danger" %>
-<% end %>
-
-

@@ -1,7 +1,0 @@
-<%= form_tag settings_path, method: 'post' do %>
-   <%= text_field_tag 'rss_name', nil, placeholder: 'Name' %>
-   <%= text_field_tag 'rss_url', nil, placeholder: 'URL', size: 80 %><br />
-   <%= submit_tag 'Save', class: "btn btn-primary" %>
-   <%= link_to "Cancel", settings_path, class: "btn btn-danger" %>
-<% end %>
-
