@@ -1,0 +1,7 @@
+<%= form_tag settings_send_addresses_path, method: 'post' do %>
+   <%= text_field_tag 'To', nil, placeholder: 'To' %>
+   <%= text_field_tag 'Name', nil, placeholder: '名前', size: 80 %><br />
+   <%= submit_tag 'Save', class: "btn btn-primary" %>
+   <%= link_to "Cancel", settings_send_addresses_path, class: "btn btn-danger" %>
+<% end %>
+
