@@ -10,12 +10,12 @@
       </tr>
    </thead>
    <tbody>
-   <% @send_addresses.each do |send_address| %>
+   <% @send_addresses.value.each do |send_address| %>
       <tr>
       <td><%= send_address[:to] %></td>
       <td><%= send_address[:name] %></td>
-      <td><%= link_to "edit", edit_settings_send_address_path(send_address[:to], to: send_address[:to]), class: "btn btn-primary" %></td>
-      <td><%= link_to "delete", settings_send_address_path(send_address[:to], to: send_address[:to]), method: 'DELETE', class: "btn btn-danger" %></td>
+      <td><%= link_to "edit", edit_settings_send_address_path(@send_addresses, to: send_address[:to]), class: "btn btn-primary" %></td>
+      <td><%= link_to "delete", settings_send_address_path(@send_addresses, to: send_address[:to]), method: 'DELETE', class: "btn btn-danger" %></td>
    </tr>
 <% end %>
    </tbody>
