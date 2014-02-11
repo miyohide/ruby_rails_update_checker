@@ -1,0 +1,20 @@
+defaults: &defaults
+   rss_urls:
+      - name: Rails
+        url:  http://weblog.rubyonrails.org/feed/atom.xml
+      - name: Ruby
+        url:  https://www.ruby-lang.org/ja/feeds/news.rss 
+
+   send_addresses:
+      - to:     foo.bar@example.com
+        name:   foo.barさま
+
+development:
+   <<: *defaults
+
+test:
+   <<: *defaults
+
+production:
+   <<: *defaults
+
