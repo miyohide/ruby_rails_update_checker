@@ -26,7 +26,8 @@ gem 'paranoia', '~> 2.0'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'feedzirra'
-gem 'rails-settings-cached', '0.3.1'
+#gem 'rails-settings-cached', '0.3.1'
+gem 'settingslogic'
 
 group :development, :test do
    gem 'rspec-rails', '~> 3.0.0.beta'
