@@ -5,10 +5,5 @@ RubyRailsUpdateChecker::Application.routes.draw do
       end
    end
 
-   namespace :settings do
-      resources :check_rsses
-      resources :send_addresses
-   end
-
    root to: 'rss_entries#index'
 end
