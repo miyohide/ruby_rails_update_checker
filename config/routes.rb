@@ -3,6 +3,10 @@ RubyRailsUpdateChecker::Application.routes.draw do
       member do
          get 'package'
       end
+
+      collection do
+         get 'rss_update'
+      end
    end
 
    root to: 'rss_entries#index'

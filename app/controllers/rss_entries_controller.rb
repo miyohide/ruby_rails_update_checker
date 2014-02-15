@@ -14,6 +14,11 @@ class RssEntriesController < ApplicationController
         disposition: "attachment; filename=#{fname}"
   end
 
+  def rss_update
+     CheckRss.perform
+     redirect_to rss_entries_url
+  end
+
   def destroy
      RssEntry.find(params[:id]).destroy
      redirect_to rss_entries_url
