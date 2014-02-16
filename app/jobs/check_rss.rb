@@ -1,11 +1,8 @@
 module CheckRss
    @queue = :check_rss_queue
    def self.perform
-      rss_list = { rails: 'http://weblog.rubyonrails.org/feed/atom.xml',
-                   ruby:  'https://www.ruby-lang.org/ja/feeds/news.rss' }
-
-      rss_list.keys.each do |name|
-         rss_entry_update(name, rss_list[name])
+      Settings.rss_urls.each do |rss_url|
+         rss_entry_update(rss_url.name, rss_url.url)
       end
    end
 
