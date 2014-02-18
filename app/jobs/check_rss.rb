@@ -1,8 +1,13 @@
 module CheckRss
    @queue = :check_rss_queue
    def self.perform
-      Settings.rss_urls.each do |rss_url|
-         rss_entry_update(rss_url.name, rss_url.url)
+      begin
+         ActiveRecord::Base.transaction do
+            Settings.rss_urls.each do |rss_url|
+               rss_entry_update(rss_url.name, rss_url.url)
+            end
+         end
+      rescue ActiveRecord::RecordInvalid
       end
    end
 
@@ -11,7 +16,7 @@ module CheckRss
       max_rss_updated_at = RssEntry.with_deleted.where(name: name).maximum(:entry_updated_at)
       rss.entries.each do |entry|
          if max_rss_updated_at.nil? || entry.published.to_datetime > max_rss_updated_at
-            RssEntry.create(
+            RssEntry.create!(
                title: entry.title,
                url: entry.url,
                content: (entry.summary || entry.content || '').gsub(/<.+?>/m, ''),
