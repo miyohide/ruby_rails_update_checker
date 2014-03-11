@@ -45,3 +45,7 @@ pickle-email-*.html
 
 # resque-scheduler dump file?
 dump.rdb
+
+# IDE
+.idea
+
