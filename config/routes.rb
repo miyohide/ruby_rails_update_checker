@@ -9,5 +9,7 @@ RubyRailsUpdateChecker::Application.routes.draw do
       end
    end
 
+   resources :projects
+
    root to: 'rss_entries#index'
 end
