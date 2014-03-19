@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<p><%= @project.name %></p>
+<p><%= @project.person_in_charge %></p>
+<p><%= @project.contact_address %></p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
