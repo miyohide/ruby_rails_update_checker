@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311133514) do
+ActiveRecord::Schema.define(version: 20140320135611) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140311133514) do
     t.string   "contact_address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ruby_version"
   end
 
   create_table "rss_entries", force: true do |t|
