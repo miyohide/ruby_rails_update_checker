@@ -3,16 +3,18 @@ class RssEntry < ActiveRecord::Base
 
    def package
       messages = ""
-      Settings.send_addresses.each do |address_info|
-         messages += message_template(address_info)
+      Project.all.each do |project|
+         messages += message_template(project)
       end
       messages
    end
 
-   def message_template(address_info)
+   def message_template(project)
       return <<"EOS"
 -----------------------------------------------------
-#{address_info["name"]}さま
+to: #{project.contact_address}
+
+#{project.person_in_charge}さま
 
 #{self.name.camelize}に関する情報をお知らせします。
 
