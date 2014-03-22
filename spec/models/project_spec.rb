@@ -46,6 +46,34 @@ describe Project do
             expect(@project).to have(1).errors_on(:contact_address)
          end
       end
+   end
+
+   describe "#check_ruby_version" do
+      describe "2.1系" do
+         before do
+            @project = Project.new(name: "proj1", person_in_charge: "person1",
+                                   contact_address: "address1",
+                                   ruby_version: "2.1.1")
+         end
+
+         context "2.1.0の場合" do
+            it "負の値が返ること" do
+               expect(@project.check_ruby_version("2.1.0")).to be < 0
+            end
+         end
+
+         context "2.1.1の場合" do
+            it "0が返ること" do
+               expect(@project.check_ruby_version("2.1.1")).to eq 0
+            end
+         end
+
+         context "2.1.2の場合" do
+            it "正の値が返ること" do
+               expect(@project.check_ruby_version("2.1.2")).to be > 0
+            end
+         end
+      end
 
    end
 end
