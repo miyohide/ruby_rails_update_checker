@@ -1,44 +1,60 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<%= form_for(@project, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
+   <% if @project.errors.any? %>
+   <div id="error_explanation">
+   <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
+   <ul>
       <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+         <li><%= msg %></li>
+   <% end %>
+   </ul>
+</div>
   <% end %>
 
-  <div class="inputs">
-     <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-     </div>
-     <div class="field">
-        <%= f.label :person_in_charge %>
-        <%= f.text_field :person_in_charge %>
-     </div>
-     <div class="field">
-        <%= f.label :contact_address %>
-        <%= f.text_field :contact_address %>
-     </div>
-     <div class="field">
-        <%= f.label :ruby_version %>
-        <%= f.text_field :ruby_version %>
-     </div>
-     <div class="field">
-        <%= f.label :rails_version %>
-        <%= f.text_field :rails_version %>
-     </div>
-     <div class="field">
-        <%= f.label :ruby_type %>
-        <%= f.text_field :ruby_type %>
-     </div>
-  </div>
+<div class="inputs">
+   <div class="form-group">
+      <%= f.label :name, 'プロジェクト名', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :name, class: "form-control" %>
+      </div>
+   </div>
+   <div class="form-group">
+      <%= f.label :person_in_charge, '担当者名', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :person_in_charge, class: "form-control" %>
+      </div>
+   </div>
+   <div class="form-group">
+      <%= f.label :contact_address, '連絡先', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :contact_address, class: "form-control" %>
+      </div>
+   </div>
+   <div class="form-group">
+      <%= f.label :ruby_version, 'Rubyバージョン', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :ruby_version, class: "form-control" %>
+      </div>
+   </div>
+   <div class="form-group">
+      <%= f.label :rails_version, 'Railsバージョン', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :rails_version, class: "form-control" %>
+      </div>
+   </div>
+   <div class="form-group">
+      <%= f.label :ruby_type, 'Rubyの種類', class: "col-sm-2 control-label" %>
+      <div class="col-sm-5">
+         <%= f.text_field :ruby_type, class: "form-control" %>
+      </div>
+   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-group">
+   <div class="col-sm-offset-2 col-sm-5">
+      <%= f.submit class: "btn btn-default" %>
+      <%= link_to 'Back', projects_path, class: "btn btn-danger" %>
+   </div>
+</div>
 <% end %>
+
