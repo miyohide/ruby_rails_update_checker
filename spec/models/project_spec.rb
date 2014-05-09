@@ -58,19 +58,19 @@ describe Project do
 
          context "2.1.0の場合" do
             it "負の値が返ること" do
-               expect(@project.check_ruby_version("2.1.0")).to be < 0
+               expect(@project.patch_level_compare("2.1.0")).to be < 0
             end
          end
 
          context "2.1.1の場合" do
             it "0が返ること" do
-               expect(@project.check_ruby_version("2.1.1")).to eq 0
+               expect(@project.patch_level_compare("2.1.1")).to eq 0
             end
          end
 
          context "2.1.2の場合" do
             it "正の値が返ること" do
-               expect(@project.check_ruby_version("2.1.2")).to be > 0
+               expect(@project.patch_level_compare("2.1.2")).to be > 0
             end
          end
       end
