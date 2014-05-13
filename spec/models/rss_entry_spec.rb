@@ -10,9 +10,29 @@ describe RssEntry do
       end
 
       it { expect(@rss_entry.package).to match(/RssEntryName/) }
-      it { expect(@rss_entry.package).to match(/RssEntryContent/) }
       it { expect(@rss_entry.package).to match(/RssEntryURL/) }
    end
 
+   describe ".info_type_2_phrase" do
+      context "info type is bugfix" do
+         before do
+            @rss_entry = RssEntry.new(name: "Ruby", info_type: "bugfix")
+         end
+
+         it "return a string that includes バグ修正" do
+            expect(@rss_entry.info_type_2_phrase).to match(/バグ修正/)
+         end
+      end
+
+      context "info type is vulnerability" do
+         before do
+            @rss_entry = RssEntry.new(name: "Ruby", info_type: "vulnerability")
+         end
+
+         it "return a string that includes 脆弱性修正" do
+            expect(@rss_entry.info_type_2_phrase).to match(/脆弱性修正/)
+         end
+      end
+   end
 
 end

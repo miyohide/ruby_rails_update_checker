@@ -18,7 +18,7 @@ to: #{project.contact_address}
 
 #{self.name.camelize}に関する情報をお知らせします。
 
-#{self.content}
+今回は、#{info_type_2_phrase}
 
 詳細は、下記情報元を参照ください。
 
@@ -27,5 +27,17 @@ to: #{project.contact_address}
 
 
 EOS
+   end
+
+   def info_type_2_phrase
+      case info_type
+      when "bugfix"
+         "#{name.camelize}がバージョンアップしました。\nこのバージョンアップにはバグ修正のみが行われています。"
+
+      when "vulnerability"
+         "#{name.camelize}がバージョンアップしました。\nこのバージョンアップには脆弱性修正が含まれています。"
+      else
+         ""
+      end
    end
 end
