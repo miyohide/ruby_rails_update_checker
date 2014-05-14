@@ -1,10 +1,10 @@
-<h1>Ruby/Rails情報一覧</h1>
+<h1>Ruby/Rails情報一覧　<%= link_to '更新', rss_update_rss_entries_path, data: { disable_with: '更新中...' }, class: "btn btn-primary" %></h1>
 <table class="table">
    <thead>
       <tr>
-         <th>Title</th>
-         <th>Type</th>
-         <th>Post DateTime</th>
+         <th>タイトル</th>
+         <th>種類</th>
+         <th>投稿日時</th>
          <th></th>
          <th></th>
       </tr>
@@ -15,8 +15,8 @@
             <td><%= item.title %></td>
             <td><%= item.name %></td>
             <td><%= item.entry_updated_at %></td>
-            <td><%= link_to 'Detail', rss_entry_path(item), class: 'btn btn-primary' %></td>
-            <td><%= link_to 'Read', rss_entry_path(item), method: :delete, class: 'btn btn-danger' %></td>
+            <td><%= link_to '詳細', rss_entry_path(item), class: 'btn btn-primary' %></td>
+            <td><%= link_to '既読', rss_entry_path(item), method: :delete, data: { confirm: '既読にしますか？' }, class: 'btn btn-danger' %></td>
          </tr>
       <% end %>
    </tbody>

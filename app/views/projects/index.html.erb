@@ -6,9 +6,6 @@
       <th>プロジェクト名</th>
       <th>担当者</th>
       <th>連絡先</th>
-      <th>Rubyバージョン</th>
-      <th>Railsバージョン</th>
-      <th>Rubyの種類（CRuby/JRuby/etc）</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,12 +18,9 @@
       <td><%= project.name %></td>
       <td><%= project.person_in_charge %></td>
       <td><%= project.contact_address %></td>
-      <td><%= project.ruby_version %></td>
-      <td><%= project.rails_version %></td>
-      <td><%= project.ruby_type %></td>
-      <td><%= link_to 'Show', project, class: 'btn btn-info' %></td>
-      <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-primary' %></td>
-      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      <td><%= link_to '詳細', project, class: 'btn btn-info' %></td>
+      <td><%= link_to '編集', edit_project_path(project), class: 'btn btn-primary' %></td>
+      <td><%= link_to '削除', project, method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %></td>
   </tr>
     <% end %>
   </tbody>

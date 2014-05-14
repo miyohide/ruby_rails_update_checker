@@ -1,11 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p><%= @project.name %></p>
-<p><%= @project.person_in_charge %></p>
-<p><%= @project.contact_address %></p>
-<p><%= @project.ruby_version %></p>
-<p><%= @project.rails_version %></p>
-<p><%= @project.ruby_type %></p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="col-md-8">
+   <table class="table">
+      <thead>
+         <tr>
+            <th>項目名</th>
+            <th>値</th>
+         </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <td>プロジェクト名</td>
+         <td><%= @project.name %></td>
+      </tr>
+      <tr>
+         <td>担当者</td>
+         <td><%= @project.person_in_charge %></td>
+      </tr>
+      <tr>
+         <td>連絡先</td>
+         <td><%= @project.contact_address %></td>
+      </tr>
+      <tr>
+         <td>Rubyバージョン</td>
+         <td><%= @project.ruby_version %></td>
+      </tr>
+      <tr>
+         <td>Railsバージョン</td>
+         <td><%= @project.rails_version %></td>
+      </tr>
+      <tr>
+         <td>Rubyの種類</td>
+         <td><%= @project.ruby_type %></td>
+      </tr>
+      </tbody>
+   </table>
+   <%= link_to '編集', edit_project_path(@project), class: 'btn btn-primary' %>
+   <%= link_to '戻る', projects_path, class: 'btn btn-danger' %>
+</div>
