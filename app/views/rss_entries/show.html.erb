@@ -9,9 +9,9 @@
         </div>
     </div>
         <div class="form-group">
-        <%= f.label "info_target", "情報の対象", class: "col-md-2 control-label" %>
+        <%= label_tag "info_target", "情報の対象", class: "col-md-2 control-label" %>
         <div class="col-md-6">
-           <%= f.select :info_target, {"Ruby" => "Ruby", "Rails" => "Rails", "JRuby" => "JRuby"}, {}, multiple: true, class: "form-control" %>
+           <%= select_tag "info_target", options_for_select({"Ruby" => "Ruby", "Rails" => "Rails", "JRuby" => "JRuby"}), multiple: true, class: "form-control" %>
         </div>
     </div>
     <div class="form-group">
