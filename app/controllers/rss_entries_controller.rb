@@ -12,7 +12,7 @@ class RssEntriesController < ApplicationController
      rss_entry.info_type = params[:rss_entry][:info_type]
      rss_entry.save!
      fname = "rss_entry_#{rss_entry.id}_#{DateTime.now.to_i}.txt"
-     send_data rss_entry.package, type: 'text/text;',
+     send_data rss_entry.package(params[:info_target]), type: 'text/text;',
         disposition: "attachment; filename=#{fname}"
   end
 
